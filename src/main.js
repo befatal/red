@@ -10,16 +10,15 @@ $(document).ready(function() {
     let parameters = {'name':'', 'speciality':''};
     let data = new DoctorApi (parameters);
     let promise = data.getDoctor();
-    console.log(data)
 
   promise.then(function(response) {
     let body = JSON.parse(response);
     let doctorArray =[];
-    body.data.forEach(function(element) {
-      doctorArray.push(element.name + " " + element.specialties);
+    body.data.forEach(function() {
+      doctorArray.push(body.data.name + " " + body.data.specialties);
     },
-    doctorArray.forEach(function(element) {
-      $(".showDoctor").append("<p>" + element + "</p>");
+    doctorArray.forEach(function() {
+      $(".showDoctor").append("<p>" + body.data.name + body.data.specialties + "</p>");
     }),
       function(error) {
       $('.errors').text(`There was an error processing your request: ${error.message}`);

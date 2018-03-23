@@ -5,7 +5,7 @@ export class DoctorApi {
     this.speciality = parameters.speciality;
   }
 
-  getDoctor(doctor) {
+  getDoctor() {
 
    let request = new XMLHttpRequest();
    let url = 'https://api.betterdoctor.com/2016-03-01/doctors?location=or-portland&skip=0&limit=10&user_key=53655e2582ea8e82e621ce1990e85a45'
