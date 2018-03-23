@@ -1,5 +1,10 @@
 export class DoctorApi{
-  constructor(){}
+  constructor(parameters){
+    this.location = 'or-portland';
+    this.name = parameters.name;
+    this.issue = parameters.issue;
+  }
+  
   getDoctor(doctor) {
    console.log(doctor)
 
