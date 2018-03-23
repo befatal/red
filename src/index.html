@@ -8,13 +8,20 @@
   <body>
     <div class="container">
       <h1>Search for doctors by name or your desired specialties</h1>
-      <label for="doctor">Enter a name or speciality:</label>
+      <label for="doctor">Enter a name:</label>
       <input id="doctor" type="text">
       <button class="btn-success" id="doctorSearch">Get Current Doctor!</button>
+      <label for="speciality">Enter your medical issue:</label>
+      <input id="speciality" type="text">
+      <button class="btn-success" id="doctorSpeciality">Get Current Doctor!</button>
     </div>
     <div class="jumbotron">
       <div class="errors"></div>
       <div class="showDoctor"></div>
       </div>
+      <div class="jumbotron">
+        <div class="errors"></div>
+        <div class="showSpeciality"></div>
+        </div>
   </body>
 </html>
