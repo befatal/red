@@ -4,7 +4,7 @@ export class DoctorApi{
     this.name = parameters.name;
     this.issue = parameters.issue;
   }
-  
+
   getDoctor(doctor) {
    console.log(doctor)
 
