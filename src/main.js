@@ -5,13 +5,12 @@ import './styles.css';
 import { DoctorApi } from './doctor-interface.js';
 
 $(document).ready(function() {
-  $('#doctorSearch').submit(function() {
-    event.preventDefault();
-    // let parameters = {'name':'', 'speciality':''};
-    let newDoctor = new DoctorApi ();
+  $('#doctorSearch').click(function() {
+    let name = $('#doctor').val();
+    let newDoctor = new DoctorApi (name);
     let promise = newDoctor.getDoctor();
     promise.then(function(event) {
-      
+
     });
 
   promise.then(function(response) {
