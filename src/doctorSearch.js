@@ -10,5 +10,12 @@ export function searchDoctors(response){
     } else {
       acceptPatients = "No";
     }
+   $('#showDoctor').append;
+     <h2>${name}</h2>
+     <br>
+     <h2>${address}</h2>
+     <br>
+     <h2>Accepting New Patients - </h2>
+     <h2>${acceptPatients}</h2>
    }
   }

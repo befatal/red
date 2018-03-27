@@ -1,9 +1,9 @@
 export class DoctorApi {
-  constructor(parameters){
-    this.location = 'or-portland';
-    this.name = parameters.name;
-    this.speciality = parameters.speciality;
+  constructor() {
+    this.apiKey = process.env.exports.apiKey;
+
   }
+
 
   getDoctor() {
 
