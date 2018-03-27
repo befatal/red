@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import {searchDoctors, searchDoctorsIssue} from '.doctorSearch.js';
 export class DoctorApi {
   constructor() {
     this.apiKey = process.env.exports.apiKey;
