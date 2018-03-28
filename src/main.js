@@ -4,24 +4,27 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { DoctorApi } from './doctor-search.js';
 
-function searchDoctors(response){
-  forEach(function(response) (var i = 0; i < 10; i++) {
+const searchDoctors = response => {
+  for (var i = 0; i < 10; i++) {
     let name = response.data[i].profile.first_name + ' ' + response.data[i].last_name;
     let address = response.data[i].practices[0].visit_address.street + ' ' + response.data[i].visit_address.city + ' ' + response.data[i].visit_address.state;
     let acceptPatients;
-    if reponse.accepts_new_patients == true) {
+    if (response.accepts_new_patients == true) {
       acceptPatients = "Yes";
     } else {
       acceptPatients = "No";
     }
+  }
+};
 
-$(document).ready(function() {
-    let search = newDoctor.getDoctor();
+$(document).ready(() => {
+    let DoctorApi = new DoctorApi();
     $('#doctorSearch').click(function() {
       event.preventDefault();
-      $('.showDoctor').empty()
+      $('.showDoctor').empty();
       let doctor = $('#doctor').val();
-      $('#showDoctor').text(doctor)
-    });
+      $('#showDoctor').text(doctor);
+      DoctorApi.prototype.getDoctor(doctor, searchDoctors);
+    })
 
   });
