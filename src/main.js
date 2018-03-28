@@ -2,26 +2,37 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-import { DoctorApi } from './doctor-interface.js';
+import { DoctorApi } from './doctor-search.js';
+
+export function searchDoctors(response){
+  for (var i = 0; i < 10; i++) {
+    let name = response.data[i].profile.first_name + ' ' + response.data[i].last_name;
+    let address = response.data[i].practices[0].visit_address.street + ' ' + response.data[i].visit_address.city + ' ' + response.data[i].visit_address.state;
+    let acceptPatients;
+    if reponse.accepts_new_patients == true) {
+      acceptPatients = "Yes";
+    } else {
+      acceptPatients = "No";
+    }
+
+  export function searchDoctorsIssue(response){
+    for (var i = 0; i < 10; i++) {
+      let name = response.data[i].profile.first_name + ' ' + response.data[i].last_name;
+      let address = response.data[i].practices[0].visit_address.street + ' ' + response.data[i].visit_address.city + ' ' + response.data[i].visit_address.state;
+      let acceptPatients;
+      if reponse.accepts_new_patients == true) {
+        acceptPatients = "Yes";
+      } else {
+        acceptPatients = "No";
+        }
+   }
+  }
+
 
 $(document).ready(function() {
     let search = newDoctor.getDoctor();
     $('#doctorSearch').click(function() {
-      
+
     });
 
-  promise.then(function(response) {
-    let body = JSON.parse(response);
-    let doctorArray =[];
-    body.data.forEach(function() {
-      doctorArray.push(body.data.name + " " + body.data.specialties);
-    },
-    doctorArray.forEach(function() {
-      $(".showDoctor").append("<p>" + body.data.name + body.data.specialties + "</p>");
-    }),
-      function(error) {
-      $('.errors').text(`There was an error processing your request: ${error.message}`);
-      });
-    });
   });
-})
