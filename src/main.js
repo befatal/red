@@ -5,26 +5,28 @@ import './styles.css';
 import { DoctorApi } from './doctor-search.js';
 
 const searchDoctors = response => {
-  for (var i = 0; i < 10; i++) {
-    let name = response.data[i].profile.first_name + ' ' + response.data[i].last_name;
-    let address = response.data[i].practices[0].visit_address.street + ' ' + response.data[i].visit_address.city + ' ' + response.data[i].visit_address.state;
+  response.doctor.forEach(doctor => {
+    alert("TEST");
+    let name = response.doctor.profile.first_name + ' ' + response.doctor.last_name;
+    // let address = response.doctor.practices[0].visit_address.street + ' ' + response.data[i].visit_address.city + ' ' + response.data[i].visit_address.state;
     let acceptPatients;
     if (response.accepts_new_patients == true) {
       acceptPatients = "Yes";
     } else {
       acceptPatients = "No";
     }
-  }
+      $('.showDoctor').append('<li>' + 'Name:' + name + 'Accepting Patients?' + acceptPatients)
+  })
 };
 
 $(document).ready(() => {
-    let DoctorApi = new DoctorApi();
+    let DoctorFinder = new DoctorApi();
     $('#doctorSearch').click(function() {
       event.preventDefault();
       $('.showDoctor').empty();
       let doctor = $('#doctor').val();
       $('#showDoctor').text(doctor);
-      DoctorApi.prototype.getDoctor(doctor, searchDoctors);
+      DoctorApi.prototype.getDoctor(doctor,searchDoctors);
     })
 
   });
